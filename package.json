@@ -4,7 +4,6 @@
   "description": "Node.js script to create football match threads in the Primeira Liga subreddit",
   "main": "main.js",
   "dependencies": {
-    "cron-job-manager": "^1.0.7",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "npm": "^6.3.0",

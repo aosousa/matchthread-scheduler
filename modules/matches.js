@@ -64,8 +64,8 @@ module.exports = {
     },
 
     /**
-     * Method that will be used in the cron job to check for matches
-     * every 10 minutes
+     * Method that will be used in the setInterval to check for matches
+     * every minute
      */
     checkMatches() {
         var numMatches = 0;
@@ -83,7 +83,7 @@ module.exports = {
                         var homeTeam = match.homeTeam.name;
                         var awayTeam = match.awayTeam.name;
     
-                        message.sendMessage(homeTeam, awayTeam);
+                        // message.sendMessage(homeTeam, awayTeam);
                         utils.log(`Sent message for ${homeTeam} vs ${awayTeam}.`);
                     }
                 });
