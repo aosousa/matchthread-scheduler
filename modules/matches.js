@@ -24,7 +24,7 @@ const API_KEY = config.apiKey
  */
 function getMatchdayMatches(matchday) {
     var reqOptions = {
-        uri: `${base_url}/competitions/2017/matches?matchday=${matchday}`,
+        uri: `${base_url}/competitions/${config.competitionId}/matches?matchday=${matchday}`,
         headers: {
             'X-Auth-Token': API_KEY
         },
@@ -47,7 +47,7 @@ module.exports = {
      */
     getCurrentMatchday: function() {
         var reqOptions = {
-            uri: `${base_url}/competitions/2017`,
+            uri: `${base_url}/competitions/${config.competitionId}`,
             headers: {
                 'X-Auth-Token': API_KEY
             },

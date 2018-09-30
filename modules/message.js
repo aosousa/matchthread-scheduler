@@ -22,7 +22,7 @@ module.exports = {
         r.composeMessage({
             to: 'MatchThreadder',
             subject: 'Match Thread',
-            text: `${homeTeam} vs ${awayTeam} for /r/PrimeiraLiga`
+            text: `${homeTeam} vs ${awayTeam} for ${config.subreddit}`
         })
     }
 }
