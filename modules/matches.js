@@ -99,10 +99,12 @@ module.exports = {
                     var matchDate = moment.utc(match.utcDate);
                     var now = moment.utc(moment.now());
                     var diff  = moment.duration(matchDate.diff(now));
-                    var diffMinutes = Math.abs(Math.floor(diff.asMinutes()));
+                    var diffMinutes = Math.floor(diff.asMinutes());
 
-                    // send message if match is within 3 minutes
-                    if (diffMinutes <= 3) {
+                    // send message if match has started in the last 5 minutes
+                    // the reason for this is that the MatchThreadder bot doesn't seem to respond
+                    // consistently to messages made 5 minutes before a match.
+                    if (diffMinutes <= 0 && diffMinutes >= -5) {
                         numMatches++
                         var homeTeam = match.homeTeam.name;
                         var awayTeam = match.awayTeam.name;
@@ -115,7 +117,7 @@ module.exports = {
             });
 
             if (numMatches === 0) {
-                utils.log("No matches in the next 3 minutes.");
+                utils.log("No new matches in progress.");
             }
         }
     }
