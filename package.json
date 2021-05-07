@@ -4,7 +4,7 @@
   "description": "Node.js script to create football match threads in the Primeira Liga subreddit",
   "main": "main.js",
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "npm": "^6.14.6",
     "request": "^2.88.0",
